@@ -1,6 +1,6 @@
 # esx_adrp_vehicle
 
-ESX ADRP Vehicle Managment developed by for ADRP. Releasing this because I got kicked out and they no longer seem to use half the code, so at least someone can still enjoy it!
+ESX ADRP Vehicle Managment developed by Hawaii Beach initially for ADRP. Releasing this because I got kicked out and they no longer seem to use half the code, so at least someone can still enjoy it!
 
 ## Features
 
