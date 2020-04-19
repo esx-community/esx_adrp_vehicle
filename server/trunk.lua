@@ -51,7 +51,7 @@ end)
 ESX.RegisterServerCallback('esx_adrp_vehicle:addToTrunk', function(source, cb, item, type, count)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local plate = GetCurrentPlayerPlate(source)
-	
+
 	if plate then
 		local vehicle = GetTrunkContent(plate)
 		local vehicleItem = vehicle[item] or nil
@@ -74,7 +74,7 @@ ESX.RegisterServerCallback('esx_adrp_vehicle:addToTrunk', function(source, cb, i
 				end
 			elseif type == 'item_weapon' then
 				local _,weapon = xPlayer.getWeapon(item)
-	
+
 				if weapon then
 					if vehicleItem then
 						cb(false, _U('error_add_weaponalready'), nil, nil)
@@ -88,11 +88,11 @@ ESX.RegisterServerCallback('esx_adrp_vehicle:addToTrunk', function(source, cb, i
 				end
 			elseif type == 'item_account' then
 				local account = xPlayer.getAccount(item)
-	
+
 				if account.money >= count then
 					xPlayer.removeAccountMoney(item, count)
 					AddVehicleItem(plate, item, account.label, count, type, nil)
-	
+
 					cb(true, nil, newWeight, weightMax)
 				else
 					cb(false, _U('error_add_enoughblack'), nil, nil)
@@ -199,7 +199,7 @@ function AddVehicleItem(plate, item, label, count, type, components)
 		trunkContent[plate][item].components = components or nil
 	else
 		local vehicleCount = trunkContent[plate][item].count
-	
+
 		trunkContent[plate][item].count = vehicleCount + count
 	end
 end

@@ -67,7 +67,7 @@ AddEventHandler('esx_adrp_vehicle:toggleVehicleLock', function()
 	if coolDown then
 		return
 	end
-	
+
 	coolDown = true
 
 	if inVehicle then
@@ -118,14 +118,14 @@ AddEventHandler('esx_adrp_vehicle:onToggleVehicleLock', function(plate, targetId
 			SetVehicleDoorsLocked(foundVehicle, 4)
 			PlayVehicleDoorCloseSound(foundVehicle, 1)
 			SetVehicleDoorShut(foundVehicle, 0, true)
-	
+
 			if targetId == PlayerId() then
 				ESX.ShowNotification('Your vehicle has been locked')
 			end
 		elseif lockStatus == 4 then -- was locked
 			SetVehicleDoorsLocked(foundVehicle, 1)
 			PlayVehicleDoorOpenSound(foundVehicle, 0)
-	
+
 			if targetId == PlayerId() then
 				ESX.ShowNotification('Your vehicle has been unlocked')
 			end

@@ -27,11 +27,11 @@ function DropPlayerKey(playerId, plate)
 		for k,v in ipairs(playerKeys[playerId]) do
 			if v.plate == plate then
 				table.remove(playerKeys[playerId], k)
-	
+
 				break
 			end
 		end
-	
+
 		TriggerClientEvent('esx_adrp_vehicle:dropKey', playerId, plate)
 	end
 end

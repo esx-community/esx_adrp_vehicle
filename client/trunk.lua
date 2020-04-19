@@ -70,7 +70,7 @@ function StartTrackVehicle(vehicle, plate)
 			local menuTakeDialog = ESX.UI.Menu.IsOpen('dialog', GetCurrentResourceName(), 'trunk_take_dialog')
 			local menuDeposit = ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'trunk_deposit')
 			local menuDepositDialog = ESX.UI.Menu.IsOpen('dialog', GetCurrentResourceName(), 'trunk_deposit_dialog')
-			
+
 			if not menuMain and not menuTake and not menuTakeDialog and not menuDeposit and not menuDepositDialog then
 				timeout = timeout + 1
 
@@ -147,7 +147,7 @@ function OpenTakeMenu()
 				})
 			end
 		end
-	
+
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'trunk_take', {
 			title    = _U('trunk_take_title', weightCurrent, weightMax),
 			align    = 'top-left',
@@ -158,10 +158,10 @@ function OpenTakeMenu()
 					title = _U('trunk_take_quantity')
 				}, function(data2, menu2)
 					local quantity = tonumber(data2.value)
-	
+
 					if quantity then
 						menu2.close()
-	
+
 						ESX.TriggerServerCallback('esx_adrp_vehicle:removeFromTrunk', function(success, message, weightCurrent, weightMax)
 							if success then
 								local newData = data.current
