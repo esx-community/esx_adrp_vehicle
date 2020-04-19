@@ -120,7 +120,7 @@ ESX.RegisterServerCallback('esx_adrp_vehicle:removeFromTrunk', function(source, 
 			if type == 'item_standard' then
 				local playerItem = xPlayer.getInventoryItem(item)
 
-				if playerItem.limit ~= -1 and (playerItem.count + count) > playerItem.limit then
+				if not xPlayer.canCarryItem(item, count) then
 					cb(false, _U('error_remove_playerlimit', playerItem.label), nil, nil)
 				elseif vehicleItem.count < count then
 					cb(false, _U('error_remove_trunk', playerItem.label), nil, nil)
